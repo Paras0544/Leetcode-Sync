@@ -9,32 +9,25 @@ public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         priority_queue<ListNode*, vector<ListNode*>, Compare> pq;
 
-        // Push the head of each non-empty list into the heap
         for (auto list : lists) {
             if (list != NULL)
                 pq.push(list);
         }
 
-        // Create a dummy node to build the result list
         ListNode* dummy = new ListNode(0);
         ListNode* tail = dummy;
 
-        // While the heap is not empty
         while (!pq.empty()) {
-            // Extract the node with the smallest value
             ListNode* smallest = pq.top();
             pq.pop();
 
-            // Add it to the result list
             tail->next = smallest;
             tail = tail->next;
 
-            // If there's a next node, push it into the heap
             if (smallest->next != NULL)
                 pq.push(smallest->next);
         }
-
-        // Return the head of the merged list
+        
         return dummy->next;
     }
 };
