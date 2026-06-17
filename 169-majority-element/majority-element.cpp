@@ -17,15 +17,6 @@ public:
                 count--;
             }
         }
-        int count1 = 0;
-        for(int i=0; i<n; i++){
-            if(nums[i] == el){
-                count1++;
-            }
-        }
-        if(count1 > (n/2)){
-            return el;
-        }
-        return -1;
+        return el;
     }
 };
