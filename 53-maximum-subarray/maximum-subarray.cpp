@@ -5,7 +5,7 @@ public:
         int ans = INT_MIN;
         int sum = 0;
 
-        for(int i=0; i<n; i++){
+        for(int i = 0; i < n; i++){
             if(sum < 0){
                 sum = 0;
             }
