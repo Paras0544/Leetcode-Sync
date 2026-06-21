@@ -8,10 +8,10 @@ public:
             int complement = target - nums[i];
 
             if(mp.find(complement) != mp.end()){
-                return {mp[complement],i};
+                return{mp[complement],i};
             }
             mp[nums[i]] = i;
         }
-        return{-1,-1};      
+        return {-1,-1};
     }
 };
