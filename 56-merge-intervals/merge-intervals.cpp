@@ -5,19 +5,14 @@ public:
         vector<vector<int>> res;
         sort(intervals.begin(),intervals.end());
 
-        for(int i=0; i<n;){
-            int start = intervals[i][0];
-            int end = intervals[i][1];
-            int j = i + 1;
-
-            while (j < n && intervals[j][0] <= end) {
-                end = max(end, intervals[j][1]);
-                j++;
+        for(auto interval : intervals){
+            if(res.empty() || res.back()[1] < interval[0]){
+                res.push_back(interval);
             }
-            res.push_back({start, end});
-            i = j;
+            else{
+                res.back()[1] = max(res.back()[1],interval[1]);
+            }
         }
         return res;
-
     }
 };
