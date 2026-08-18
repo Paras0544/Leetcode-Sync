@@ -9,6 +9,7 @@ public:
                 count++;
             }
         }
+
         if(nums[0] < nums[n-1]){
             count++;
         }
